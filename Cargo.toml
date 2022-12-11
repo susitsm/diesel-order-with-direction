@@ -1,0 +1,12 @@
+[package]
+name = "diesel-order-with-direction"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+diesel = { version = "1" }
+
+[dev-dependencies]
+diesel = { version = "1", features = ["mysql"] }
