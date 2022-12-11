@@ -1,6 +1,6 @@
 [package]
 name = "diesel-order-with-direction"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 license = "MIT"
 caregories = ["database"]
@@ -9,7 +9,7 @@ repository = "https://github.com/susitsm/diesel-order-with-direction"
 description = "Order diesel queries based on a direction parameter"
 
 [dependencies]
-diesel = { version = "1" }
+diesel = { version = "2" }
 
 [dev-dependencies]
-diesel = { version = "1", features = ["mysql"] }
+diesel = { version = "2", features = ["mysql"] }
