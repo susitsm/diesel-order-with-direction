@@ -1,9 +1,9 @@
 [package]
 name = "diesel-order-with-direction"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
-caregories = ["database"]
+categories = ["database"]
 keywords = ["diesel", "query", "order", "ordering"]
 repository = "https://github.com/susitsm/diesel-order-with-direction"
 description = "Order diesel queries based on a direction parameter"
