@@ -164,10 +164,10 @@ pub trait OrderWithDirectionDsl: Sized {
     /// # }
     /// // These two do the same
     /// people::table
-    ///     .into_boxed()
+    ///     .into_boxed::<Mysql>()
     ///     .order((people::height.asc(), people::age.asc()));
     /// people::table
-    ///     .into_boxed()
+    ///     .into_boxed::<Mysql>()
     ///     .order_multiple_with_dir(
     ///         QueryOrderDirection::Ascending,
     ///         (people::height, people::age),
@@ -217,7 +217,7 @@ pub trait OrderableTuple {
 
 macro_rules! impl_orderabletuple {
     ($($G:ident),+) => {
-        impl<$($G: ExpressionMethods,)*> OrderableTuple for ($($G,)*) {
+        impl<$($G: ExpressionMethods + diesel::expression::NonAggregate,)*> OrderableTuple for ($($G,)*) {
             type AscOutput = ($(Asc<$G>,)*);
             type DescOutput = ($(Desc<$G>,)*);
             fn asc(self) -> Self::AscOutput {
